@@ -1,0 +1,736 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* padding & border      size  */
+    text-transform: capitalize;
+}
+body {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+/*      //////////////   Styling the header     //////////////////      */
+.header{
+    height: 55px;
+    width: 100%;
+    background-color: rgba(39, 97, 173, 0.7);
+    position: fixed ;
+    top: 0; left: 0;
+    z-index: 30;
+}
+.header-home, .header-search{
+    font-size: 25px;
+    color: white;
+    padding-top: 15px;
+    padding-left: 25px;
+    text-align: center;
+}
+.header-search{
+    position: absolute;/*to get over the search bar*/
+    color: black;
+}
+.header input{
+    height: 35px;
+    width: 15%;
+    border-radius: 15px;
+    margin-left: 17px;
+    text-align: center ;/*to get the text beside the search icon not under it*/
+    position: absolute; /*to hae the search icon*/
+    margin-top: 10px;
+}
+/* Styling the header List */
+.header-list{
+    list-style: none;
+    float: right;
+    font-size: 25px;
+}
+.header-list li{
+    display: inline-block;
+    margin: 12px 20px 0 0   ;    
+}
+.header-list li a{
+    text-decoration: none;
+    color: white;
+    position: relative;
+}
+.header-list li a:after {
+    position: absolute;
+    content: "";
+    height: 3px;
+    width: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgb(25, 9, 173);
+    opacity: 0;
+}
+.header-list li a:hover:after {
+    width: 100%;
+    opacity: 0.8;
+    transition: 0.5s;
+}
+/* Styling sub list */
+.blog-list{ /*Li*/
+    display: inline-block;
+    position: relative;
+}
+.header-blog{/*Ul*/
+    position: absolute;
+    width: 150px;
+    padding-bottom: 15px;
+    background-color: rgb(134, 134, 185)55, 55, 136);
+    text-align: center;
+    visibility: hidden;
+    z-index: 50;
+    border: 1px solid rgb(95, 95, 192);
+    border-radius: 10px;
+    margin-bottom: 5px; 
+}
+.header-blog li {
+    display: block;
+}
+.header-blog li a {
+    color: rgb(143, 143, 240);
+    display: block;
+    padding: 10px 0px;
+    margin: 0;
+}
+.blog-list:hover .header-blog {
+    visibility: visible;
+}
+
+/*      /////////////////////////////////////////////////////////////////       */
+/*      /////--------------------Common Styling---------------------/////       */
+/*                    section 2 :: welcome  && Section 3 :: products 
+                      Section 4 :: offer    && Section 5 :: Why                 */
+.section{
+    width: 100%;
+    height: 100vh;
+    text-align: center; /* to centralize the text */
+    text-transform: capitalize;
+    position: relative; /*to centeralize the container*/
+}
+.section-container{
+    width: 80%;
+    overflow: auto;
+    margin: 50px 10% 20px 10%;
+}
+.section a{
+    text-decoration: none;
+    font-size: 20px;
+    color: rgb(80, 140, 189);
+    line-height: 50px;
+}
+.section-title, .team-title{
+    font-size: 50px;
+    margin-top: 20px;
+    /* margin: 100px auto 20px auto; */
+    text-align: center;
+}
+.section-line{
+    width: 15%;
+    height: 5px;
+    background-color: rgb(80, 140, 189);
+    margin: 20px auto;
+    border-radius: 5px;
+}
+.card{
+    width: 30%;
+    height: 35vh;
+    padding-top: 35px;
+    border: 3px solid rgb(80, 140, 189) ;
+    border-radius: 12px;
+    float:  left;   
+
+    position: relative; /* to enable the effect*/
+}
+.card-center{
+    margin: 0 5%;
+}
+.section i{
+    font-size: 35px;
+    margin-top: 7%;
+    color: rgb(80, 140, 189);
+}
+.card-title{
+    margin-top: 5px;
+    font-size: 25px;
+}
+.card-text{
+    margin-top: 20px;
+    font-size: 17px;
+}
+.overlay{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+/*///////////////////////////////////////////////////////////////////////////*/
+/*      /////////--------    First Section "Creative"   ---------///////     */
+.creative{
+    background-image: url(../images/img2.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+}
+     
+.creative-overlay{   
+    /* width: 100%;
+    height: 100%;
+    position: absolute; */
+    background-color: rgba(0, 0, 0, 0.3);
+}
+.creative-container{
+    height: 20%;
+    /* to centralizze the content */
+    width: 40%;
+    position: absolute;
+    top: 50%; left: 50%; 
+    transform: translate(-50%,-50%);
+    border-radius: 12px;
+    z-index: 1;
+}
+.creative-title
+{
+    color: white;
+    font-size: 70px;
+}
+.creative-text{
+    color: #f0f8ff;
+    font-size: 40px;
+}
+.creative-btn{
+    width: 200px;
+    font-size: 20px;
+    height: 50px;
+    border-radius: 25px;
+    text-transform: capitalize;
+}
+.btn-info{
+    color: rgb(39, 97, 173);    
+    background-color: white;
+    border: 2px solid rgb(39, 97, 173);
+    cursor: pointer;
+    transition: 0.3s;
+}
+.btn-info:hover{
+    background-color: rgb(39, 97, 173);
+    color: white;
+}
+.btn-order{
+    color: white;   
+    background-color: rgb(39, 97, 173); 
+    border: 2px solid white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.btn-order:hover{
+    background-color: white;
+    color: rgb(39, 97, 173);
+    border-color: rgb(39, 97, 173);
+}
+
+/*/////////////////////////////////////////////////////////////////////////////////////*/
+/*      /////////--------    Section 2 :: Welcome - Three Cards   ---------///////     */
+
+/* at the common section */
+.welcome{ } 
+.container-line, .welcome-line{ }
+.welcome-title{ padding-top: 30px;} .container-title{ }
+.welcome-container{ }
+.welcome-card, .card{ }
+.card-center{ }
+.welcome i{ }
+.welcome-card-title, .card-title{ }
+.welcome-card-text{ }
+.welcome a{ }
+
+.welcome-card:hover .welcome-card-title{ color: rgb(22, 34, 211);}
+.welcome-card:hover .welcome-card-text{ color: gray;}
+.welcome-card:hover  i{ color: rgb(22, 34, 211);}
+.welcome-card:hover  a{ color: rgb(22, 34, 211);}
+
+
+/*/////////////////////////////////////////////////////////////////////////*/
+/*      /////////--------    Section 3 ::  products   ---------///////     */
+
+.products-section{} /* at the common section as section*/
+.products-up-container{}/* products-up-containr at the common section as section-container*/
+.products-title{ /*of the cards*/
+    font-size: 40px;
+    margin-top: 100px;
+    text-align: center;
+} 
+.products-container-up, .products-container-down{
+    margin-top: 30px;
+}
+.products i{
+    padding: 30px;
+    font-size: 40px;
+    color: white;
+}
+.products-img{
+    width: 30%;
+    height: 340px;
+    float: left;
+    position: relative;
+    background-size: cover;
+    background-position: center;
+}
+.products-img-overlay{
+    /* width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.5); */
+    padding-top: 0%;
+    color: white;
+    visibility: hidden;
+    border-radius: 5%;
+}
+.products-img:hover .products-img-overlay{    visibility: visible;}
+.products-backgnd-up-left{      background-image: url(../images/Prod.1.webp);}
+.products-backgnd-up-center{    background-image: url(../images/Prod.2.webp);}
+.products-backgnd-up-right{     background-image: url(../images/prod.3.webp);}
+.products-backgnd-down-left{    background-image: url(../images/Prod.4.webp);}
+.products-backgnd-down-center{  background-image: url(../images/Prod.5.webp);}
+.products-backgnd-down-right{   background-image: url(../images/prod.6.webp);}
+
+.products-backgnd-up-center, .products-backgnd-down-center{ margin: 0 5%;}
+
+/*////////////////////////////////////////////////////////////////////////////////*/
+/*      /////////--------    Section 4 :: Offer - 6 cards   ---------///////     */
+
+/* offer div is in the common styling called section*/
+.offer-card{ overflow: auto;}
+.offer-icon, .offer-text{
+    height: 100%;
+    float: left;
+}
+.offer-icon{ width: 12%;}
+.offer-text{ width: 88%;text-align: left;}
+.offer-container-down{
+    margin-top: 60px;
+}
+.offer-card:hover .offer-title{ color: rgb(228, 184, 184);}
+.offer-card:hover .offer-text{ color: gray;}
+.offer-card:hover  i{ color: rgb(22, 34, 211);}
+.offer-card:hover  a{ color: rgb(22, 34, 211);}
+
+/*///////////////////////////////////////////////////////////////////////*/
+/*      /////////--------    Section 5 :: Why Us   ---------///////     */
+
+.why{
+    text-align: left;
+    height: 100vh;
+    line-height: 35px;
+    padding-left: 3%;
+}
+.why-line{
+    width: 15%;
+    height: 5px;
+    background-color: rgb(80, 140, 189);
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.why h2{
+    font-size: 40px;
+}
+.why p{
+    font-size: 20px;
+}
+.why i{
+    font-size: 20px;
+    color:  rgb(80, 140, 189);
+}
+.why-container{
+    width: 80%;
+    margin: auto ;
+    overflow: auto;
+}
+.why-container-left{
+    width: 50%;
+    height: 90%;
+    margin-left: 2%;
+    margin-top: 10%;
+    padding-top: 10%;
+    color: rgb(101, 101, 133);
+    float: left;
+}
+.why img{
+    margin-top: 80px;
+    width: 100%;
+    height: 50%;
+}
+.why-container-right{
+    width: 20%;
+    height: 90%;
+    margin-top: 10%;
+    margin-left:10%;
+    float: left;
+}
+.why-circle{
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    float: right;
+    margin-right: 10px;
+    background-color: rgb(101, 101, 133);
+}
+.why-circle-right{
+    margin-right: 70px;
+}
+.why-circle:hover{
+    background-color: rgb(80, 140, 189);
+}
+/*//////////////////////////////////////////////////////////////////////*/
+/*      /////////--------    Section 6 :: cover   ---------///////     */
+ 
+.cover{
+    margin-left: 10%;
+    height: 30%;
+    width: 80%;
+    background-image: url(../images/cover.webp);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    position: relative;
+    border-radius: 17px;
+}
+.cover-overlay{
+    /* height: 100%;
+    width: 100%;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.5); */
+    border-radius: 17px;
+}
+.icons{
+    position: absolute;
+    height: 100%;
+    width: 20%;
+    margin-left: 2.5%;
+    color: white;
+    text-align: center;
+    padding-top: 65px;
+    font-size: 30px;
+    line-height: 45px;
+}
+.icons-frame2{ margin-left: 27.5%; }
+.icons-frame3{ margin-left: 52.5%; }
+.icons-frame4{ margin-left: 77.5%; }
+.icons i{color: rgb(80, 140, 189);}
+
+/*////////////////////////////////////////////////////////////////////////////*/
+/*      /////////--------    Section 7 :: pricing   ---------///////     */
+
+.pricing-title{ padding-top: 40px;}
+.pricing{
+    height: 100vh;
+    width: 100%;
+}
+.pricing-parent{
+    overflow: auto;
+    width: 80%;
+    margin-left: 10%;
+}
+.pricing-sector{
+    height: auto;
+    width: 28%;
+    background-color: rgb(201, 213, 223);
+    color: black;
+    border-radius: 10px;
+    text-align: center  ;
+    float: left;
+    margin-left: 4%;
+    /* border: 3px solid orange; */
+    position: relative;
+}
+/* .pricing-sector::after{ */
+.pricing-cir{
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 3px solid  rgb(80, 140, 189);
+    margin: 25px     auto   0px     auto;
+    padding-top: 9%;    
+}
+.pricing-sector p{
+    margin: 10px 20px;
+}
+.pricing-sector button{
+    width: 150px;
+    height: 25px;
+    border-radius: 10px;
+    background-color: rgb(152, 179, 202); 
+    margin: 20px    auto ;
+    font-weight: bold;
+    font-style: italic;
+    border: 3px solid rgb(80, 140, 189);
+}
+.pricing-sector button:hover{
+    background-color: rgb(80, 140, 189);
+}
+
+/*////////////////////////////////////////////////////////////////////////*/
+/*      /////////--------    Section 8 :: Profile   ---------///////     */
+.profile-container{
+    height: 40%;
+    width: 100%;   
+    background: url(../images/profilecover.jpg) no-repeat fixed center;
+    /* background: path repeat attachment position */
+    position: relative;
+}
+.profile-overlay{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    overflow: auto;
+}
+.profile-section{
+    width: 30%;
+    height: 100%;
+    float: left;
+}
+.pricing-title{text-align: center;}
+.profile-container img{
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    float: left;
+    margin: 20px 20px;
+}
+.profile-container h2{
+    padding-top: 57px;
+    color: rgb(80, 140, 189);
+}
+.profile-title{color: rgba(210, 227, 247, 0.849);}    
+
+.profile-left{margin-left: 15%;}
+.profile-right{margin-left: 5%;}
+
+
+/*    ///////////////////////////////////     */
+/*      Section 9 :: team........           */
+.team{ height: 100vh; }
+.team-title{
+ /* at the common section */
+}
+.team-container {
+    width: 80%;
+    margin: 5% auto;
+}
+.team-parent {
+    overflow: auto;
+}
+.team-item {
+    float: left;
+    background-color: rgb(177, 176, 176);
+    width: 30%;
+    padding: 18px 13px; 
+    text-align: center;
+    border-radius: 10px ;
+    position: relative;
+}
+.team-item2 {
+    margin: 0px  5%;
+}
+.team-img {
+    background-color: rgb(178, 178, 178);
+    width: 90%;
+    margin: auto;
+    position: relative;
+}
+.team-img  img {
+    width: 100%;
+    border-radius: 10px ;
+}
+
+.team-overlay {
+    /* position: absolute; */
+    /* width: 100%; height: 100%; */
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    border-radius: 10px ;
+    /* background-color: rgba(0, 0, 0, 0.5); */
+    visibility: hidden;
+}
+
+.team-item:hover  .team-overlay {
+    visibility: visible;
+}
+
+.team-overlay  a {
+    display: block;
+    width: 40px;
+    height: 40px;
+    background-color: rgb(80, 140, 189);
+    color: #fff;
+    font-size: 20px ;
+    margin-left: auto ;
+    margin-top: 15px;
+    margin-right: 7px;
+    border-radius: 10px;
+}
+
+.team-overlay  a  i {
+    line-height: 40px;
+}
+
+.team-info-title {
+    /* text-transform: capitalize; */
+    padding: 10px 0px;
+}
+.team-info-p {
+    color: rgb(69, 69, 69);
+    text-transform: uppercase;
+}
+
+.team-item:hover  .team-info-title {
+    color: #fff;
+    transition: 1s;
+}
+
+.team-item:hover  .team-info-p {
+    color: blue;
+    transition: 1s;
+}
+
+/* /////////////////////////////////////////////////////////////////// */
+/*      ////////////    section 10 :: news  ////////////////////       */
+.news{ height: 100vh; }
+.news-parent{
+    overflow: auto;
+    width: 80%;
+    margin-left: 10%;
+}
+.news-sector{
+    height: auto;
+    width: 28%;
+    background-color: rgb(201, 213, 223);
+    color: black;
+    border-radius: 10px;
+    text-align: center  ;
+    float: left;
+    margin-left: 4%;
+
+    position: relative; /* to enabe the effect*/
+}
+.news-sector h2{margin-top: 10px;}
+.news-sector:hover h2{color: white   ;}
+.news-sector span{margin-left: 7px;}
+.news-sector p{
+    margin: 10px 20px;
+    line-height: 20px;
+    color: rgb(50, 69, 82);
+}
+.news-sector:hover p{color: rgb(80, 140, 189);}
+.news img{
+    width: 80%;
+    height: 200px;
+    display: block;
+    margin: 15px auto;
+    border-radius: 10px;
+}
+.news-sector a{
+    font-size: 20px;
+    padding-left: 20px;
+    color: rgb(37, 144, 231); 
+    text-decoration: none;    
+}
+
+/* /////////////////////////////////////////////////////////////////// */
+/*      ////////////    section 11 :: info  ////////////////////       */
+.info{
+    width: 100%;
+    height: 40vh;
+    background-color: rgb(185, 203, 209);
+    text-align: center;
+    padding-top: 43px;
+}
+.info img{
+    width: 20%;
+    height: 19vh;
+    display: block;
+    margin: 1vh auto;
+    border-radius: 7px;
+}
+.info-cont{
+    width: 335px;
+    overflow: auto;
+    margin: 20px auto   ;
+}
+.info-cir{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    float: left;
+    background-color: rgb(37, 144, 231);
+    margin-left: 5px;
+}
+.info-cir:hover{ background-color: rgb(10, 134, 235);}
+
+.info-icon{
+    font-size: 30px;
+    border-radius: 50%;
+    color: white;
+    padding-top: 5px;
+}
+.info span{
+    font-size: 15px;
+    color: rgb(37, 144, 231);
+}
+.info-right{ color: white;}
+
+
+
+/*      Effect Common       */
+/* Section 2 :: Welcome && Section 4 :: offers*/
+.effect-card24::after{
+    content: "";
+    position: absolute;
+
+    width: 0%; height: 0%;
+    top: 0; left: 0;
+    background-color: rgb(80, 140, 189,0.3);
+
+    visibility: hidden;
+    
+    /* to be interacting */
+    pointer-events: none;
+
+    border-radius: 10px;
+}
+
+.effect-card24:hover::after{
+    visibility: visible;
+    width: 100%; height: 100%;
+    transition: 1s;
+}
+
+/* Section 8 :: Pricing && Section 9 :: Team && Section 10 :: News */
+.effect-card::after{
+    content: "";
+    position: absolute;
+
+    width: 100%; height: 0%;
+    top: 0; left: 0;
+    background-color: rgb(80, 140, 189,0.3);
+
+    visibility: hidden;
+    
+    /* to be interacting */
+    pointer-events: none;
+
+    border-radius: 10px;
+}
+
+.effect-card:hover::after{
+    visibility: visible;
+    width: 100%; height: 100%;
+    transition: 1s;
+}
